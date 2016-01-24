@@ -1,4 +1,4 @@
-package com.dwl.services;
+package com.dwl;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
