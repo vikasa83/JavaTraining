@@ -23,6 +23,11 @@ public class ProductResource {
 	public ProductResource() {
 		productServiceImpl = new ProductServiceImpl();
 	}
+	
+	@GET
+	public Response getProducts() {
+		return Response.ok(productServiceImpl.getProducts().toString()).build();
+	}
 
 	@GET
 	@Path("/{productId}")
