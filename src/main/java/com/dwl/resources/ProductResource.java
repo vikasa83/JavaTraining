@@ -2,6 +2,7 @@ package com.dwl.resources;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -46,6 +47,11 @@ public class ProductResource {
 		else{
 			return Response.status(HttpStatus.NOT_FOUND_404).build();
 		}
+	}
+	
+	@POST
+	public Response createProduct(){
+		return Response.status(HttpStatus.CREATED_201).build();
 	}
 	
 }
