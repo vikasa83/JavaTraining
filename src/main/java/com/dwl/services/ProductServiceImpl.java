@@ -31,7 +31,7 @@ public class ProductServiceImpl {
 
 		    keys.add(doc.content());
 		}
-		System.out.println("list size"+keys.size());
+		System.out.println("list size: "+keys.size());
 		return keys;
 	}
 	
