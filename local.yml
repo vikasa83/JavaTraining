@@ -1,4 +1,0 @@
-couchbase.nodes:
-- http://localhost:8091
-couchbase.bucket: products
-couchbase.password:
