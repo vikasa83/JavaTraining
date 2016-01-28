@@ -33,7 +33,7 @@ public class ProductPrice {
 		 String id = "";
 	        try {
 	            JsonObject productPriceData = parsePrice(priceData);
-	            id = "productPrice"+ productPriceData.getString("id");
+	            id = "productPrice-"+ productPriceData.getString("id");
 	            JsonDocument doc = CouchbaseService.createDocument(id, productPriceData);
 	            couchbaseService.create(doc);
 	            return new ResponseEntity<String>(id, HttpStatus.CREATED);
@@ -62,7 +62,7 @@ public class ProductPrice {
 	
 	@RequestMapping(method=RequestMethod.GET, value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> getPrice(@PathVariable String id){
-		id = "productPrice"+ id;
+		id = "productPrice-"+ id;
 		   JsonDocument doc = couchbaseService.read(id);
 	        if (doc != null) {
 	            return new ResponseEntity<String>(doc.content().toString(), HttpStatus.OK);

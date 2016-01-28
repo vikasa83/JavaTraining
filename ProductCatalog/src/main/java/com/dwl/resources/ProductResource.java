@@ -88,7 +88,7 @@ public class ProductResource {
 			// productService.addProductAsync(productId, productObject);
 			// observable.forEach(jsonDocument-> System.out.println("---------------Data persisted in couchbase  async manner"+jsonDocument.toString()));
 			productService.addProductAsync(productId, productObject).toBlocking().single();
-			ResponseBuilder created = Response.created(URI.create(productId));
+			ResponseBuilder created = Response.created(URI.create(productId));	
 			return created.build();
 		} catch (IllegalArgumentException e) {
 			return Response.status(HttpStatus.BAD_REQUEST_400).build();
