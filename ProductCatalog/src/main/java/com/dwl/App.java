@@ -4,8 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.dwl.resources.ProductResource;
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -25,8 +23,7 @@ public class App extends Application<GlobalMartConfiguration>{
 		LOGGER.info("Method App#run() called");
 		System.out.println("ProductService Using DropWizard!");
 		System.out.println("Coucbase Bucket : " + c.getCouchbaseBucket());
-		Injector injector = Guice.createInjector();
-		e.jersey().register(new ProductResource());
+		e.jersey().register(new ProductResource(c));
 	}
 
 	public static void main(String[] args) throws Exception {
