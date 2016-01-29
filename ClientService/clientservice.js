@@ -59,8 +59,10 @@ exports.batchHandler = function(req, res) {
         });
       },
       function(arg1,callback) {
+        console.log('arg1');
+        console.log(arg1);
       //  var productType = req.param('productType');
-        console.log('productArray.length == '+productArray.length)
+        //console.log('productArray.length == '+productArray.length)
         for(var i = 0; i< productArray.length; i++){
           //console.log(productArray[i]);
           //console.log(productArray[i].productId);
@@ -70,9 +72,10 @@ exports.batchHandler = function(req, res) {
            if(err) { console.log(err); callback(true); return; }
            //console.log(url);
            obj = JSON.parse(body);
-           console.log(obj);
+           //console.log(obj);
            priceArray.push(obj);
            if(i == priceArray.length){
+            console.log(obj);
             callback(false, obj);
           }
         });
@@ -82,11 +85,12 @@ exports.batchHandler = function(req, res) {
     function (err, results) {
       if(err) { console.log(err); res.send(500,"Server Error"); return; }
       console.log('=====');
-      console.log(priceArray.length);
-      console.log('======');
-      console.log(priceArray);
-      console.log('======');
-      var priceInfoArray = [];
+      console.log(results);
+      //console.log(priceArray.length);
+      //console.log('======');
+      //console.log(priceArray);
+      //console.log('======');
+      //var priceInfoArray = [];
 
       res.send({productInfo:productArray, priceInfo:priceArray});
     }
