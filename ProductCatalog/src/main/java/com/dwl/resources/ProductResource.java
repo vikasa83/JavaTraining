@@ -38,6 +38,9 @@ public class ProductResource {
 		productService = new ProductServiceImpl(config);
 	}
 	
+	public ProductResource(){
+		
+	}
 	@GET
 	public Response getProducts(@QueryParam("productType")String productType) {
 		
