@@ -18,7 +18,7 @@ public class ProductServiceImpl implements ProductService{
 	GlobalMartConfiguration config;
 	CouchbaseCluster cluster;
 	Bucket bucket;
-	
+	public ProductServiceImpl(){}
 	public ProductServiceImpl(GlobalMartConfiguration config) {
 		cluster = CouchbaseCluster.create(config.getCouchbaseNodes());
 		bucket = cluster.openBucket(config.getCouchbaseBucket());
