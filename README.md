@@ -87,3 +87,6 @@ To get products and price information of particular product type together in a J
 GET
 
 http://localhost:3000/getByType/productType=mobile
+
+
+H1. Nice Docking
